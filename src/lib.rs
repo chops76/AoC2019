@@ -216,6 +216,9 @@ pub mod aoc_cli {
 
         cmd_args.append(&mut vec!["--day".into(), day.to_string(), command.into()]);
 
+        cmd_args.push("-s".to_string());
+        cmd_args.push(".adventofcode.session".to_string());
+
         cmd_args
     }
 
