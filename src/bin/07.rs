@@ -67,6 +67,6 @@ mod tests {
     #[test]
     fn test_part_one() {
         let input = advent_of_code::read_file("examples", 7);
-        assert_eq!(part_one(&input), None);
+        assert_eq!(part_one(&input), Some(54321));
     }
 }
