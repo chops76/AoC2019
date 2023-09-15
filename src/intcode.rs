@@ -91,9 +91,15 @@ impl IntCode {
     }
 
     pub fn run(&mut self) {
-        while !self.finished {
+        while !self.finished && !self.blocked_on_input {
             self.tick();
         }
+    }
+
+    pub fn run_until_output(&mut self) {
+        while !self.finished && !self.blocked_on_input && !self.output_available {
+            self.tick();
+        }        
     }
 
     fn get_val(&mut self, addr: usize, mode: i64) -> i64 {
